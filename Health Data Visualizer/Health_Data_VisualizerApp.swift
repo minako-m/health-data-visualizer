@@ -7,7 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
-
+import FirebaseAuth
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -22,10 +22,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct Health_Data_VisualizerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var healthDataModel = HealthDataModel()
+    @StateObject private var userSessionManager = UserSessionManager.shared
+        
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(healthDataModel)
+            // Observe the userSessionManager for authentication state changes
+            if userSessionManager.currentUser != nil {
+                ContentView()
+                    .environmentObject(healthDataModel)
+            } else {
+                AuthView()
+                    .environmentObject(userSessionManager) // Optional if needed in AuthView
+            }
         }
     }
 }

@@ -17,10 +17,7 @@ class HealthDataModel: ObservableObject {
     @Published var weeklyStepData: [HKStatistics] = []
     @Published var errorMessage: String? = nil
     
-    init() {
-        // Request HealthKit access when the model is initialized
-        // requestHealthKitAccess()
-    }
+    init() {}
     
     func requestHealthKitAccess() {
         HealthKitManager.shared.requestHealthDataAccess { [weak self] success, error in
@@ -51,7 +48,13 @@ class HealthDataModel: ObservableObject {
     }
     
     func uploadWeeklyStepData() {
+        guard let user = UserSessionManager.shared.currentUser else {
+            print("No user is signed in")
+            return
+        }
+        
         let db = Firestore.firestore()
+        let userID = user.uid
         
         // Prepare data for upload
         let stepsData = weeklyStepData.map { statistic -> [String: Any] in
@@ -65,14 +68,12 @@ class HealthDataModel: ObservableObject {
             ]
         }
         
-        // Upload data
-        db.collection("weekly_steps").addDocument(data: [
-            "data": stepsData,
-            "timestamp": Timestamp(date: Date())
-        ]) { error in
+        db.collection("users").document(userID)
+            .collection("stepData").addDocument(data: ["steps": stepsData]) { error in
             if let error = error {
-                print("Error adding document: \(error)")
+                print("Error writing document: \(error)")
             } else {
+                print(UserSessionManager.shared.currentUser?.uid)
                 print("Document successfully written!")
             }
         }

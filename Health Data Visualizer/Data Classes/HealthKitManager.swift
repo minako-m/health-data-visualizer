@@ -18,10 +18,8 @@ class HealthKitManager {
         let typesToShare: Set<HKSampleType> = [] // Define types to write
         let typesToRead: Set = [
             HKObjectType.quantityType(forIdentifier: .stepCount)!,
-            HKObjectType.quantityType(forIdentifier: .heartRate)!,
             HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-            HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!
-
+            HKSampleType.quantityType(forIdentifier: .bodyMass)!,
         ]
 
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { success, error in

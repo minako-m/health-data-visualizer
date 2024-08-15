@@ -24,8 +24,11 @@
 		171835A22C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 171835A12C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		171835A42C6D804400F059A5 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 171835A32C6D804400F059A5 /* FirebaseAppCheck */; };
 		171835A62C6D804400F059A5 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 171835A52C6D804400F059A5 /* FirebaseAppDistribution-Beta */; };
-		171835A82C6D833800F059A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171835A72C6D833700F059A5 /* GoogleService-Info.plist */; };
 		171835AB2C6E62A400F059A5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 171835AA2C6E62A400F059A5 /* FirebaseFirestore */; };
+		171835AD2C6E788800F059A5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 171835AC2C6E788800F059A5 /* FirebaseAuth */; };
+		171835AF2C6E78BA00F059A5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835AE2C6E78BA00F059A5 /* AuthView.swift */; };
+		171835B32C6E7E9000F059A5 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835B22C6E7E8F00F059A5 /* UserSessionManager.swift */; };
+		171835B72C6E868B00F059A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171835B62C6E868B00F059A5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +64,9 @@
 		1718358F2C62EDA300F059A5 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
 		171835912C62F35000F059A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1718359A2C6C47B300F059A5 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
-		171835A72C6D833700F059A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		171835AE2C6E78BA00F059A5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		171835B22C6E7E8F00F059A5 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
+		171835B62C6E868B00F059A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1781122A2C602BCB00339762 /* Health Data Visualizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health Data Visualizer.entitlements"; sourceTree = "<group>"; };
 		1781122B2C60406300339762 /* Health-Data-Visualizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Health-Data-Visualizer-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -76,6 +81,7 @@
 				171835A62C6D804400F059A5 /* FirebaseAppDistribution-Beta in Frameworks */,
 				171835A22C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				171835A02C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				171835AD2C6E788800F059A5 /* FirebaseAuth in Frameworks */,
 				171835AB2C6E62A400F059A5 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,11 +127,12 @@
 		1715E0C52C601E61002CBD22 /* Health Data Visualizer */ = {
 			isa = PBXGroup;
 			children = (
-				171835A72C6D833700F059A5 /* GoogleService-Info.plist */,
+				171835B62C6E868B00F059A5 /* GoogleService-Info.plist */,
 				1781122B2C60406300339762 /* Health-Data-Visualizer-Info.plist */,
 				1781122A2C602BCB00339762 /* Health Data Visualizer.entitlements */,
 				1715E0C62C601E61002CBD22 /* Health_Data_VisualizerApp.swift */,
 				171835912C62F35000F059A5 /* ContentView.swift */,
+				171835AE2C6E78BA00F059A5 /* AuthView.swift */,
 				171835942C62F39D00F059A5 /* Data Classes */,
 				171835932C62F36600F059A5 /* Tab Views */,
 				1715E0CA2C601E65002CBD22 /* Assets.xcassets */,
@@ -183,6 +190,7 @@
 			children = (
 				1718358D2C6195B100F059A5 /* HealthKitManager.swift */,
 				1718359A2C6C47B300F059A5 /* HealthDataModel.swift */,
+				171835B22C6E7E8F00F059A5 /* UserSessionManager.swift */,
 			);
 			path = "Data Classes";
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 				171835A32C6D804400F059A5 /* FirebaseAppCheck */,
 				171835A52C6D804400F059A5 /* FirebaseAppDistribution-Beta */,
 				171835AA2C6E62A400F059A5 /* FirebaseFirestore */,
+				171835AC2C6E788800F059A5 /* FirebaseAuth */,
 			);
 			productName = "Health Data Visualizer";
 			productReference = 1715E0C32C601E61002CBD22 /* Health Data Visualizer.app */;
@@ -310,7 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1715E0CE2C601E65002CBD22 /* Preview Assets.xcassets in Resources */,
-				171835A82C6D833800F059A5 /* GoogleService-Info.plist in Resources */,
+				171835B72C6E868B00F059A5 /* GoogleService-Info.plist in Resources */,
 				1715E0CB2C601E65002CBD22 /* Assets.xcassets in Resources */,
 				1718358A2C61940200F059A5 /* Contents.json in Resources */,
 			);
@@ -337,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171835AF2C6E78BA00F059A5 /* AuthView.swift in Sources */,
+				171835B32C6E7E9000F059A5 /* UserSessionManager.swift in Sources */,
 				1715E0C92C601E61002CBD22 /* FetchDataView.swift in Sources */,
 				171835922C62F35000F059A5 /* ContentView.swift in Sources */,
 				1715E0C72C601E61002CBD22 /* Health_Data_VisualizerApp.swift in Sources */,
@@ -722,6 +733,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		171835AC2C6E788800F059A5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
