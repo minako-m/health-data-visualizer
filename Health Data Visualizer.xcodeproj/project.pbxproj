@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1715E0C72C601E61002CBD22 /* Health_Data_VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E0C62C601E61002CBD22 /* Health_Data_VisualizerApp.swift */; };
-		1715E0C92C601E61002CBD22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E0C82C601E61002CBD22 /* ContentView.swift */; };
+		1715E0C92C601E61002CBD22 /* FetchDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E0C82C601E61002CBD22 /* FetchDataView.swift */; };
 		1715E0CB2C601E65002CBD22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1715E0CA2C601E65002CBD22 /* Assets.xcassets */; };
 		1715E0CE2C601E65002CBD22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1715E0CD2C601E65002CBD22 /* Preview Assets.xcassets */; };
 		1715E0D82C601E66002CBD22 /* Health_Data_VisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E0D72C601E66002CBD22 /* Health_Data_VisualizerTests.swift */; };
 		1715E0E22C601E67002CBD22 /* Health_Data_VisualizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E0E12C601E67002CBD22 /* Health_Data_VisualizerUITests.swift */; };
 		1715E0E42C601E67002CBD22 /* Health_Data_VisualizerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715E0E32C601E67002CBD22 /* Health_Data_VisualizerUITestsLaunchTests.swift */; };
+		1718358A2C61940200F059A5 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 171835882C61940200F059A5 /* Contents.json */; };
+		1718358E2C6195B100F059A5 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718358D2C6195B100F059A5 /* HealthKitManager.swift */; };
+		171835902C62EDA400F059A5 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718358F2C62EDA300F059A5 /* ChartsView.swift */; };
+		171835922C62F35000F059A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835912C62F35000F059A5 /* ContentView.swift */; };
+		1718359B2C6C47B300F059A5 /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718359A2C6C47B300F059A5 /* HealthDataModel.swift */; };
+		1718359E2C6D804400F059A5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1718359D2C6D804400F059A5 /* FirebaseAnalytics */; };
+		171835A02C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 1718359F2C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion */; };
+		171835A22C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 171835A12C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		171835A42C6D804400F059A5 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 171835A32C6D804400F059A5 /* FirebaseAppCheck */; };
+		171835A62C6D804400F059A5 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 171835A52C6D804400F059A5 /* FirebaseAppDistribution-Beta */; };
+		171835A82C6D833800F059A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171835A72C6D833700F059A5 /* GoogleService-Info.plist */; };
+		171835AB2C6E62A400F059A5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 171835AA2C6E62A400F059A5 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +48,7 @@
 /* Begin PBXFileReference section */
 		1715E0C32C601E61002CBD22 /* Health Data Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Data Visualizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1715E0C62C601E61002CBD22 /* Health_Data_VisualizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_Data_VisualizerApp.swift; sourceTree = "<group>"; };
-		1715E0C82C601E61002CBD22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1715E0C82C601E61002CBD22 /* FetchDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataView.swift; sourceTree = "<group>"; };
 		1715E0CA2C601E65002CBD22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1715E0CD2C601E65002CBD22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1715E0D32C601E66002CBD22 /* Health Data VisualizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Health Data VisualizerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +56,14 @@
 		1715E0DD2C601E67002CBD22 /* Health Data VisualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Health Data VisualizerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1715E0E12C601E67002CBD22 /* Health_Data_VisualizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_Data_VisualizerUITests.swift; sourceTree = "<group>"; };
 		1715E0E32C601E67002CBD22 /* Health_Data_VisualizerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_Data_VisualizerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		171835882C61940200F059A5 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		1718358D2C6195B100F059A5 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		1718358F2C62EDA300F059A5 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
+		171835912C62F35000F059A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1718359A2C6C47B300F059A5 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
+		171835A72C6D833700F059A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1781122A2C602BCB00339762 /* Health Data Visualizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health Data Visualizer.entitlements"; sourceTree = "<group>"; };
+		1781122B2C60406300339762 /* Health-Data-Visualizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Health-Data-Visualizer-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +71,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171835A42C6D804400F059A5 /* FirebaseAppCheck in Frameworks */,
+				1718359E2C6D804400F059A5 /* FirebaseAnalytics in Frameworks */,
+				171835A62C6D804400F059A5 /* FirebaseAppDistribution-Beta in Frameworks */,
+				171835A22C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				171835A02C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				171835AB2C6E62A400F059A5 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +104,7 @@
 				1715E0D62C601E66002CBD22 /* Health Data VisualizerTests */,
 				1715E0E02C601E67002CBD22 /* Health Data VisualizerUITests */,
 				1715E0C42C601E61002CBD22 /* Products */,
+				171835A92C6E62A400F059A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +121,15 @@
 		1715E0C52C601E61002CBD22 /* Health Data Visualizer */ = {
 			isa = PBXGroup;
 			children = (
+				171835A72C6D833700F059A5 /* GoogleService-Info.plist */,
+				1781122B2C60406300339762 /* Health-Data-Visualizer-Info.plist */,
+				1781122A2C602BCB00339762 /* Health Data Visualizer.entitlements */,
 				1715E0C62C601E61002CBD22 /* Health_Data_VisualizerApp.swift */,
-				1715E0C82C601E61002CBD22 /* ContentView.swift */,
+				171835912C62F35000F059A5 /* ContentView.swift */,
+				171835942C62F39D00F059A5 /* Data Classes */,
+				171835932C62F36600F059A5 /* Tab Views */,
 				1715E0CA2C601E65002CBD22 /* Assets.xcassets */,
+				171835892C61940200F059A5 /* AppIcon.appiconset */,
 				1715E0CC2C601E65002CBD22 /* Preview Content */,
 			);
 			path = "Health Data Visualizer";
@@ -127,6 +160,40 @@
 			path = "Health Data VisualizerUITests";
 			sourceTree = "<group>";
 		};
+		171835892C61940200F059A5 /* AppIcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+				171835882C61940200F059A5 /* Contents.json */,
+			);
+			name = AppIcon.appiconset;
+			path = Assets.xcassets/AppIcon.appiconset;
+			sourceTree = "<group>";
+		};
+		171835932C62F36600F059A5 /* Tab Views */ = {
+			isa = PBXGroup;
+			children = (
+				1715E0C82C601E61002CBD22 /* FetchDataView.swift */,
+				1718358F2C62EDA300F059A5 /* ChartsView.swift */,
+			);
+			path = "Tab Views";
+			sourceTree = "<group>";
+		};
+		171835942C62F39D00F059A5 /* Data Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1718358D2C6195B100F059A5 /* HealthKitManager.swift */,
+				1718359A2C6C47B300F059A5 /* HealthDataModel.swift */,
+			);
+			path = "Data Classes";
+			sourceTree = "<group>";
+		};
+		171835A92C6E62A400F059A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +210,14 @@
 			dependencies = (
 			);
 			name = "Health Data Visualizer";
+			packageProductDependencies = (
+				1718359D2C6D804400F059A5 /* FirebaseAnalytics */,
+				1718359F2C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion */,
+				171835A12C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				171835A32C6D804400F059A5 /* FirebaseAppCheck */,
+				171835A52C6D804400F059A5 /* FirebaseAppDistribution-Beta */,
+				171835AA2C6E62A400F059A5 /* FirebaseFirestore */,
+			);
 			productName = "Health Data Visualizer";
 			productReference = 1715E0C32C601E61002CBD22 /* Health Data Visualizer.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +290,9 @@
 				Base,
 			);
 			mainGroup = 1715E0BA2C601E60002CBD22;
+			packageReferences = (
+				1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1715E0C42C601E61002CBD22 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1715E0CE2C601E65002CBD22 /* Preview Assets.xcassets in Resources */,
+				171835A82C6D833800F059A5 /* GoogleService-Info.plist in Resources */,
 				1715E0CB2C601E65002CBD22 /* Assets.xcassets in Resources */,
+				1718358A2C61940200F059A5 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1715E0C92C601E61002CBD22 /* ContentView.swift in Sources */,
+				1715E0C92C601E61002CBD22 /* FetchDataView.swift in Sources */,
+				171835922C62F35000F059A5 /* ContentView.swift in Sources */,
 				1715E0C72C601E61002CBD22 /* Health_Data_VisualizerApp.swift in Sources */,
+				1718359B2C6C47B300F059A5 /* HealthDataModel.swift in Sources */,
+				1718358E2C6195B100F059A5 /* HealthKitManager.swift in Sources */,
+				171835902C62EDA400F059A5 /* ChartsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,17 +503,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Health Data Visualizer/Health Data Visualizer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Health Data Visualizer/Preview Content\"";
 				DEVELOPMENT_TEAM = Q8XQAJB3AZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Health-Data-Visualizer-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,17 +535,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Health Data Visualizer/Health Data Visualizer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Health Data Visualizer/Preview Content\"";
 				DEVELOPMENT_TEAM = Q8XQAJB3AZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Health-Data-Visualizer-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,7 +571,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q8XQAJB3AZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "SnyderLab.Health-Data-VisualizerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,7 +591,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q8XQAJB3AZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "SnyderLab.Health-Data-VisualizerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -520,6 +610,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q8XQAJB3AZ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "SnyderLab.Health-Data-VisualizerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,6 +629,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q8XQAJB3AZ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "SnyderLab.Health-Data-VisualizerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,6 +680,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1718359D2C6D804400F059A5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		1718359F2C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		171835A12C6D804400F059A5 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		171835A32C6D804400F059A5 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		171835A52C6D804400F059A5 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		171835AA2C6E62A400F059A5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1718359C2C6D804400F059A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1715E0BB2C601E60002CBD22 /* Project object */;
 }
