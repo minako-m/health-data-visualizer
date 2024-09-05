@@ -23,8 +23,44 @@ class HealthKitManager {
         ]
 
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { success, error in
-            completion(success, error)
+            if success {
+                
+            }
         }
+    }
+    
+    func getWeeklyData(for quantityType: HKQuantityType, completion: @escaping ([HKStatistics]?, Error?) -> Void) {
+        let calendar = Calendar.current
+        let now = Date()
+        
+        // Define the end of the week and the start of the week
+        let endOfWeek = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: now)
+        let endOfWeekDate = calendar.date(from: endOfWeek)!
+        let startOfWeekDate = calendar.date(byAdding: .day, value: -7, to: endOfWeekDate)!
+        
+        // Create the predicate for fetching samples from the start to end of the week
+        let predicate = HKQuery.predicateForSamples(withStart: startOfWeekDate, end: endOfWeekDate)
+        
+        // Create the query to fetch weekly data
+        let query = HKStatisticsCollectionQuery(
+            quantityType: quantityType,
+            quantitySamplePredicate: predicate,
+            options: .cumulativeSum,
+            anchorDate: startOfWeekDate,
+            intervalComponents: DateComponents(day: 1)
+        )
+        
+        // Handle the results of the query
+        query.initialResultsHandler = { query, result, error in
+            guard let result = result else {
+                completion(nil, error)
+                return
+            }
+            let stats = result.statistics()
+            
+            completion(stats, nil)
+        }
+        healthStore.execute(query)
     }
     
     func getWeeklyStepCountData(completion: @escaping ([HKStatistics]?, Error?) -> Void) {

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import HealthKit
 
 struct TopView: View {
     var body: some View {
@@ -30,7 +31,7 @@ struct ContentView: View {
                     .tabItem() {
                         Label("Your Data", systemImage: "person.crop.circle")
                     }
-                ChartsView()
+                ChartsView(dataType: .activeEnergyBurned, unit: HKUnit.kilocalorie(), title: "Active Energy Burned")
                     .tabItem() {
                         Label("Charts", systemImage: "list.dash")
                     }

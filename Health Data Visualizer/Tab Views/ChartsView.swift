@@ -15,24 +15,26 @@ struct ChartsView: View {
     @State private var errorMessage: String?
     @EnvironmentObject var healthDataModel: HealthDataModel
     
+    var dataType: HKQuantityTypeIdentifier
+    var unit: HKUnit
+    var title: String
+    
     var body: some View {
         VStack {
-            if healthDataModel.weeklyStepData.isEmpty {
-                Text("No data available. Please fetch the data.")
-            } else {
-                Text("Summary of Step Counts for the Past Week")
+            if let statistics = healthDataModel.weeklyData[dataType.rawValue], !statistics.isEmpty {
+                Text("Summary of \(title) for the Past Week")
                     .font(.headline)
                     .foregroundColor(.blue)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding()
                 Chart {
-                    ForEach (healthDataModel.weeklyStepData, id: \.startDate) { statistic in
+                    ForEach (statistics, id: \.startDate) { statistic in
                         if let quantity = statistic.sumQuantity() {
-                            let steps = quantity.doubleValue(for: HKUnit.count())
+                            let value = quantity.doubleValue(for: unit)
                             
                             BarMark (
                                 x: .value("Date", statistic.startDate, unit: .day),
-                                y: .value("Step Count", steps)
+                                y: .value(title, value)
                             )
                             .cornerRadius(7)
                         }
@@ -40,11 +42,13 @@ struct ChartsView: View {
                 }
                 .frame(height: 300)
                 .padding()
+            } else {
+                Text("No data available. Please fetch the data.")
             }
         }
     }
 }
 
-#Preview {
-    ChartsView()
-}
+//#Preview {
+//    ChartsView()
+//}

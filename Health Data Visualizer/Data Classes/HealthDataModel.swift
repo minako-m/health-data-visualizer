@@ -16,6 +16,7 @@ import FirebaseFirestore
 class HealthDataModel: ObservableObject {
     @Published var weeklyStepData: [HKStatistics] = []
     @Published var errorMessage: String? = nil
+    @Published var weeklyData: [String: [HKStatistics]] = [:]
     
     init() {}
     
@@ -29,6 +30,27 @@ class HealthDataModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    // Generic function to fetch weekly data of any type
+    func fetchWeeklyData(for quantityType: HKQuantityType) {
+        HealthKitManager.shared.getWeeklyData(for: quantityType) { [weak self] data, error in
+            if let data = data {
+                DispatchQueue.main.async {
+                    self?.handleWeeklyData(data, for: quantityType)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    print("Error: \(error?.localizedDescription ?? "Unknown error in fetchWeeklyData")")
+                    self?.errorMessage = error?.localizedDescription
+                }
+            }
+        }
+    }
+    
+    private func handleWeeklyData(_ data: [HKStatistics], for quantityType: HKQuantityType) {
+        // Store data in a dictionary by quantity type identifier
+        weeklyData[quantityType.identifier] = data
     }
     
     func fetchWeeklyStepData() {
@@ -73,7 +95,7 @@ class HealthDataModel: ObservableObject {
             if let error = error {
                 print("Error writing document: \(error)")
             } else {
-                print(UserSessionManager.shared.currentUser?.uid)
+                print(UserSessionManager.shared.currentUser?.uid as Any)
                 print("Document successfully written!")
             }
         }

@@ -31,8 +31,8 @@ struct FetchDataView: View {
                 .padding()
             
             VStack {
-                Button(action: handleFetchData) {
-                    Text("Fetch Weekly Data")
+                Button("Fetch Weekly Data") {
+                    fetchData(for: .activeEnergyBurned, unit: HKUnit.kilocalorie())
                 }
                 .alert(isPresented: $showAlert) {
                     Alert(
@@ -45,6 +45,7 @@ struct FetchDataView: View {
                 Button(action: {
                     UserSessionManager.shared.signOut()
                     healthDataModel.weeklyStepData = []
+                    healthDataModel.weeklyData = [:]
                 }) {
                     Text("Sign Out")
                 }
@@ -57,13 +58,33 @@ struct FetchDataView: View {
         }
     }
     
-    private func handleFetchData() {
-        if healthDataModel.weeklyStepData.isEmpty {
-            healthDataModel.requestHealthKitAccess()
-            healthDataModel.fetchWeeklyStepData()
-        } else {
+    private func fetchData(for type: HKQuantityTypeIdentifier, unit: HKUnit) {
+        // Check if there's already fetched data for the specified type
+        if let statistics = healthDataModel.weeklyData[type.rawValue], !statistics.isEmpty {
             // Show alert if data is already fetched
             showAlert = true
+            
+            // Print fetched data to the console
+            print("Fetched Weekly Data for \(type.rawValue):")
+            for statistic in statistics {
+                let startDate = statistic.startDate
+                let endDate = statistic.endDate
+                if let sumQuantity = statistic.sumQuantity() {
+                    let value = sumQuantity.doubleValue(for: unit)
+                    print("Start: \(startDate), End: \(endDate), Value: \(value) \(unit)")
+                } else {
+                    print("No sum quantity available for this statistic.")
+                }
+            }
+        } else {
+            // No data yet, so request access and fetch the data
+            healthDataModel.requestHealthKitAccess()
+            
+            if let quantityType = HKQuantityType.quantityType(forIdentifier: type) {
+                healthDataModel.fetchWeeklyData(for: quantityType)
+            } else {
+                print("Error: Invalid HealthKit quantity type identifier.")
+            }
         }
     }
 }
