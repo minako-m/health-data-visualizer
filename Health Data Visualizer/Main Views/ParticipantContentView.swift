@@ -22,7 +22,7 @@ struct TopView: View {
     }
 }
 
-struct ContentView: View {
+struct ParticipantContentView: View {
     var body: some View {
         VStack {
             TopView()
@@ -34,6 +34,10 @@ struct ContentView: View {
                 ChartsView(dataType: .activeEnergyBurned, unit: HKUnit.kilocalorie(), title: "Active Energy Burned")
                     .tabItem() {
                         Label("Charts", systemImage: "list.dash")
+                    }
+                ParticipantStudyView()
+                    .tabItem() {
+                        Label("Studies", systemImage: "waveform.path.ecg")
                     }
             }
         }
