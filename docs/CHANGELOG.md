@@ -8,6 +8,9 @@
 
 ## Template
 
-### [Date] + (link to PR/commit)
+### [September 12, 2024] (https://github.com/Stanford-Health/wearipedia-apple/commit/7776787437f6d9e09758eceb556af6149ee08f3e)
 
-- Description of changes
+Added: 
+1) storing whether a person signing in is a participant or a clinician
+2) functionality to display and add study names and descriptions on clinician's end. clinician can only view their own studies
+3) functionality for a participant to see all added studies (from all clinicians) in ParticipantStudyView
