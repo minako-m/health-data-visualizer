@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 class UserSessionManager: ObservableObject {
     static let shared = UserSessionManager()
@@ -14,6 +15,15 @@ class UserSessionManager: ObservableObject {
     @Published private(set) var currentUser: User? {
         didSet {
             print("User updated: \(String(describing: currentUser))")
+            if let userId = currentUser?.uid {
+                fetchUserRole(userId: userId)
+            }
+        }
+    }
+    
+    @Published private(set) var currentUserRole: String? {
+        didSet {
+            print("User role updated: \(String(describing: currentUserRole))")
         }
     }
     
@@ -42,7 +52,7 @@ class UserSessionManager: ObservableObject {
         }
     }
 
-    func signUp(email: String, password: String) {
+    func signUp(email: String, password: String, role: String) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 print("Sign-up error: \(error.localizedDescription)")
@@ -53,6 +63,34 @@ class UserSessionManager: ObservableObject {
                 }
                 print("User signed up!!")
                 print(user)
+                
+                self.addUserRole(userId: user.uid, role: role)
+            }
+        }
+    }
+    
+    private func addUserRole(userId: String, role: String) {
+        let db = Firestore.firestore()
+        db.collection("users").document(userId).setData(["role": role]) { error in
+            if let error = error {
+                print("Error adding role: \(error.localizedDescription)")
+            } else {
+                self.currentUserRole = role
+                print("Role added successfully")
+            }
+        }
+    }
+    
+    func fetchUserRole(userId: String) {
+        let db = Firestore.firestore()
+        db.collection("users").document(userId).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let role = document.data()?["role"] as? String
+                DispatchQueue.main.async {
+                    self.currentUserRole = role
+                }
+            } else {
+                print("No such document or error: \(error?.localizedDescription ?? "Unknown error")")
             }
         }
     }

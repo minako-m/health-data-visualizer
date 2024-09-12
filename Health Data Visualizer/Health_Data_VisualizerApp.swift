@@ -28,8 +28,12 @@ struct Health_Data_VisualizerApp: App {
         WindowGroup {
             // Observe the userSessionManager for authentication state changes
             if userSessionManager.currentUser != nil {
-                ContentView()
-                    .environmentObject(healthDataModel)
+                if userSessionManager.currentUserRole == "clinician" {
+                    ClinicianContentView()
+                } else {
+                    ParticipantContentView()
+                        .environmentObject(healthDataModel)
+                }
             } else {
                 AuthView()
                     .environmentObject(userSessionManager) // Optional if needed in AuthView

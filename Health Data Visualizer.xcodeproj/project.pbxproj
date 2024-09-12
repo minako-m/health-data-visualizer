@@ -17,7 +17,7 @@
 		1718358A2C61940200F059A5 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 171835882C61940200F059A5 /* Contents.json */; };
 		1718358E2C6195B100F059A5 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718358D2C6195B100F059A5 /* HealthKitManager.swift */; };
 		171835902C62EDA400F059A5 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718358F2C62EDA300F059A5 /* ChartsView.swift */; };
-		171835922C62F35000F059A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835912C62F35000F059A5 /* ContentView.swift */; };
+		171835922C62F35000F059A5 /* ParticipantContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835912C62F35000F059A5 /* ParticipantContentView.swift */; };
 		1718359B2C6C47B300F059A5 /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718359A2C6C47B300F059A5 /* HealthDataModel.swift */; };
 		1718359E2C6D804400F059A5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1718359D2C6D804400F059A5 /* FirebaseAnalytics */; };
 		171835A02C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 1718359F2C6D804400F059A5 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -29,6 +29,10 @@
 		171835AF2C6E78BA00F059A5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835AE2C6E78BA00F059A5 /* AuthView.swift */; };
 		171835B32C6E7E9000F059A5 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835B22C6E7E8F00F059A5 /* UserSessionManager.swift */; };
 		171835B72C6E868B00F059A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171835B62C6E868B00F059A5 /* GoogleService-Info.plist */; };
+		177CEFBA2C92F4AC004ADC0D /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CEFB92C92F4AC004ADC0D /* StudyView.swift */; };
+		177CEFBC2C92F6C2004ADC0D /* ParticipantStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CEFBB2C92F6C2004ADC0D /* ParticipantStudyView.swift */; };
+		17A327D72C91B1B400C8BC49 /* ClinicianContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A327D62C91B1B400C8BC49 /* ClinicianContentView.swift */; };
+		17A327DB2C91F79200C8BC49 /* AddStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A327DA2C91F79200C8BC49 /* AddStudyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,13 +66,17 @@
 		171835882C61940200F059A5 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		1718358D2C6195B100F059A5 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		1718358F2C62EDA300F059A5 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
-		171835912C62F35000F059A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		171835912C62F35000F059A5 /* ParticipantContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantContentView.swift; sourceTree = "<group>"; };
 		1718359A2C6C47B300F059A5 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
 		171835AE2C6E78BA00F059A5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		171835B22C6E7E8F00F059A5 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		171835B62C6E868B00F059A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		177CEFB92C92F4AC004ADC0D /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
+		177CEFBB2C92F6C2004ADC0D /* ParticipantStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantStudyView.swift; sourceTree = "<group>"; };
 		1781122A2C602BCB00339762 /* Health Data Visualizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health Data Visualizer.entitlements"; sourceTree = "<group>"; };
 		1781122B2C60406300339762 /* Health-Data-Visualizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Health-Data-Visualizer-Info.plist"; sourceTree = SOURCE_ROOT; };
+		17A327D62C91B1B400C8BC49 /* ClinicianContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicianContentView.swift; sourceTree = "<group>"; };
+		17A327DA2C91F79200C8BC49 /* AddStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,10 +139,10 @@
 				1781122B2C60406300339762 /* Health-Data-Visualizer-Info.plist */,
 				1781122A2C602BCB00339762 /* Health Data Visualizer.entitlements */,
 				1715E0C62C601E61002CBD22 /* Health_Data_VisualizerApp.swift */,
-				171835912C62F35000F059A5 /* ContentView.swift */,
-				171835AE2C6E78BA00F059A5 /* AuthView.swift */,
+				17A327D82C91F5E800C8BC49 /* Main Views */,
 				171835942C62F39D00F059A5 /* Data Classes */,
-				171835932C62F36600F059A5 /* Tab Views */,
+				171835932C62F36600F059A5 /* Participant Views */,
+				17A327D92C91F76A00C8BC49 /* Clinician Views */,
 				1715E0CA2C601E65002CBD22 /* Assets.xcassets */,
 				171835892C61940200F059A5 /* AppIcon.appiconset */,
 				1715E0CC2C601E65002CBD22 /* Preview Content */,
@@ -176,13 +184,14 @@
 			path = Assets.xcassets/AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
-		171835932C62F36600F059A5 /* Tab Views */ = {
+		171835932C62F36600F059A5 /* Participant Views */ = {
 			isa = PBXGroup;
 			children = (
 				1715E0C82C601E61002CBD22 /* FetchDataView.swift */,
 				1718358F2C62EDA300F059A5 /* ChartsView.swift */,
+				177CEFBB2C92F6C2004ADC0D /* ParticipantStudyView.swift */,
 			);
-			path = "Tab Views";
+			path = "Participant Views";
 			sourceTree = "<group>";
 		};
 		171835942C62F39D00F059A5 /* Data Classes */ = {
@@ -200,6 +209,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17A327D82C91F5E800C8BC49 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				171835AE2C6E78BA00F059A5 /* AuthView.swift */,
+				17A327D62C91B1B400C8BC49 /* ClinicianContentView.swift */,
+				171835912C62F35000F059A5 /* ParticipantContentView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		17A327D92C91F76A00C8BC49 /* Clinician Views */ = {
+			isa = PBXGroup;
+			children = (
+				17A327DA2C91F79200C8BC49 /* AddStudyView.swift */,
+				177CEFB92C92F4AC004ADC0D /* StudyView.swift */,
+			);
+			path = "Clinician Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,13 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177CEFBC2C92F6C2004ADC0D /* ParticipantStudyView.swift in Sources */,
 				171835AF2C6E78BA00F059A5 /* AuthView.swift in Sources */,
 				171835B32C6E7E9000F059A5 /* UserSessionManager.swift in Sources */,
 				1715E0C92C601E61002CBD22 /* FetchDataView.swift in Sources */,
-				171835922C62F35000F059A5 /* ContentView.swift in Sources */,
+				171835922C62F35000F059A5 /* ParticipantContentView.swift in Sources */,
 				1715E0C72C601E61002CBD22 /* Health_Data_VisualizerApp.swift in Sources */,
+				17A327D72C91B1B400C8BC49 /* ClinicianContentView.swift in Sources */,
 				1718359B2C6C47B300F059A5 /* HealthDataModel.swift in Sources */,
+				177CEFBA2C92F4AC004ADC0D /* StudyView.swift in Sources */,
 				1718358E2C6195B100F059A5 /* HealthKitManager.swift in Sources */,
+				17A327DB2C91F79200C8BC49 /* AddStudyView.swift in Sources */,
 				171835902C62EDA400F059A5 /* ChartsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
