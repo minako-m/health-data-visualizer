@@ -14,15 +14,15 @@ struct ParticipantStudyView: View {
     @State private var enrolledStudies = [Study]()
     
     var body: some View {
-        VStack {
-            Picker("Which studies do you want to display?", selection: $filterStudies) {
-                Text("All Studies").tag("all")
-                Text("My Studies").tag("enrolled")
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            
-            NavigationView {
+        NavigationView {
+            VStack {
+                Picker("Which studies do you want to display?", selection: $filterStudies) {
+                    Text("All Studies").tag("all")
+                    Text("My Studies").tag("enrolled")
+                }
+                .pickerStyle(.segmented)
+                .padding()
+                
                 if allStudies.isEmpty {
                     Text("No studies available")
                         .padding()
@@ -38,14 +38,13 @@ struct ParticipantStudyView: View {
                     Text("You are currently not enrolled in any studies.")
                         .padding()
                 }
+                
+                Spacer()
             }
             .background(Color.white)
-            
-            Spacer()
-        }
-        .background(Color.white)
-        .onAppear() {
-            fetchAllStudies()
+            .onAppear() {
+                fetchAllStudies()
+            }
         }
     }
     
