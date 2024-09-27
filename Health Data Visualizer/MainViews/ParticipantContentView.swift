@@ -12,13 +12,13 @@ import HealthKit
 struct TopView: View {
     var body: some View {
         HStack (alignment: .top, content: {
-            Text("Health Data Visualizer")
+            Text("Wearipedia")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.white)
         })
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Color.blue.opacity(0.8))
+        .background(Color.blue.opacity(0.3))
     }
 }
 
