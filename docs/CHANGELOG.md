@@ -1,5 +1,12 @@
 ## Change Log
 
+### [October 16, 2024](https://github.com/Stanford-Health/wearipedia-apple/commit/d2870be38000d2cfcf95b862ff4b42905e81a10d)
+- created sample firebase project for a study, implemented uploading data to that firebase
+- added functionality for clinician to choose start date for data to be fetched
+- added funcitonality if enrolling in a study and seeing only your enrolled studies
+- currently, enrolling in a study means being added to a clinician's firebase as a participant with all entries of specific data type (currently distanceWalkingRunning) uploaded to that firebase (from a specific start date)
+- minor UI changes
+
 ### [September 27, 2024](https://github.com/Stanford-Health/wearipedia-apple/commit/cd259bd28cd71a2aae39352bc48b77ae8e3e9c17)
 - minor UI additions
 - renamed folders

@@ -31,11 +31,11 @@ struct ParticipantContentView: View {
                     .tabItem() {
                         Label("Your Data", systemImage: "person.crop.circle")
                     }
-                ChartsView(dataType: .activeEnergyBurned, unit: HKUnit.kilocalorie(), title: "Active Energy Burned")
+                ChartsView(dataType: .distanceWalkingRunning, unit: HKUnit.meter(), title: "Distance Walking Running")
                     .tabItem() {
                         Label("Charts", systemImage: "list.dash")
                     }
-                ParticipantStudyView()
+                AllStudiesView()
                     .tabItem() {
                         Label("Studies", systemImage: "waveform.path.ecg")
                     }

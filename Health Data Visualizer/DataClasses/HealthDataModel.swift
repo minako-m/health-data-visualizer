@@ -24,25 +24,31 @@ class HealthDataModel: ObservableObject {
         HealthKitManager.shared.requestHealthDataAccess { [weak self] success, error in
             if success {
                 // Access granted, proceed with data fetching or other operations
+                print("Access granted through HealthKitManager within HealthDataModel")
             } else {
                 DispatchQueue.main.async {
                     self?.errorMessage = error?.localizedDescription
+                    print(error?.localizedDescription ?? "Unknown error in request access")
                 }
             }
         }
     }
     
     // Generic function to fetch weekly data of any type
-    func fetchWeeklyData(for quantityType: HKQuantityType) {
-        HealthKitManager.shared.getWeeklyData(for: quantityType) { [weak self] data, error in
+    func fetchWeeklyData(for quantityType: HKQuantityType, startDate: Date, completion: @escaping ([HKStatistics]?, Error?) -> Void) {
+        print("WE GOT HERE")
+        HealthKitManager.shared.getWeeklyData(for: quantityType, startDate: startDate) { [weak self] data, error in
+            print("WE GOT HERE TOO")
             if let data = data {
                 DispatchQueue.main.async {
                     self?.handleWeeklyData(data, for: quantityType)
+                    completion(data, nil)
                 }
             } else {
                 DispatchQueue.main.async {
                     print("Error: \(error?.localizedDescription ?? "Unknown error in fetchWeeklyData")")
                     self?.errorMessage = error?.localizedDescription
+                    completion(nil, error)
                 }
             }
         }
@@ -58,7 +64,7 @@ class HealthDataModel: ObservableObject {
             if let data = data {
                 DispatchQueue.main.async {
                     self?.weeklyStepData = data
-                    self?.uploadWeeklyStepData()
+                    //self?.uploadWeeklyStepData()
                 }
             } else {
                 DispatchQueue.main.async {

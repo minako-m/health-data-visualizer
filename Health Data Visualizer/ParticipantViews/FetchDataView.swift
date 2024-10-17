@@ -32,7 +32,7 @@ struct FetchDataView: View {
             
             VStack {
                 Button("Fetch Weekly Data") {
-                    fetchData(for: .activeEnergyBurned, unit: HKUnit.kilocalorie())
+                    fetchData(for: .distanceWalkingRunning, unit: HKUnit.meter())
                 }
                 .alert(isPresented: $showAlert) {
                     Alert(
@@ -81,7 +81,13 @@ struct FetchDataView: View {
             healthDataModel.requestHealthKitAccess()
             
             if let quantityType = HKQuantityType.quantityType(forIdentifier: type) {
-                healthDataModel.fetchWeeklyData(for: quantityType)
+                healthDataModel.fetchWeeklyData(for: quantityType, startDate: Date()) { statistics, error in
+                    if let error = error {
+                        print("Error fetching weekly data: \(error.localizedDescription)")
+                    } else {
+                        print("Fetched new statistics for \(type.rawValue): \(statistics)")
+                    }
+                }
             } else {
                 print("Error: Invalid HealthKit quantity type identifier.")
             }
