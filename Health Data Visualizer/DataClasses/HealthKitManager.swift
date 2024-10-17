@@ -19,7 +19,7 @@ class HealthKitManager {
         let typesToRead: Set = [
             HKObjectType.quantityType(forIdentifier: .stepCount)!,
             HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-            HKSampleType.quantityType(forIdentifier: .bodyMass)!,
+            HKSampleType.quantityType(forIdentifier: .bodyFatPercentage)!,
         ]
 
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { success, error in
@@ -29,34 +29,57 @@ class HealthKitManager {
         }
     }
     
-    func getWeeklyData(for quantityType: HKQuantityType, completion: @escaping ([HKStatistics]?, Error?) -> Void) {
+    func getWeeklyData(for quantityType: HKQuantityType, startDate: Date, completion: @escaping ([HKStatistics]?, Error?) -> Void) {
+        print("We just called getWeeklyData slayyy")
         let calendar = Calendar.current
         let now = Date()
         
-        // Define the end of the week and the start of the week
-        let endOfWeek = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: now)
-        let endOfWeekDate = calendar.date(from: endOfWeek)!
-        let startOfWeekDate = calendar.date(byAdding: .day, value: -7, to: endOfWeekDate)!
+        // Define the start of the 7-day period by subtracting 6 days from today
+        let startOfPeriod = startDate
+        // Define the end of the period as now
+        let endOfPeriod = now
         
         // Create the predicate for fetching samples from the start to end of the week
-        let predicate = HKQuery.predicateForSamples(withStart: startOfWeekDate, end: endOfWeekDate)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfPeriod, end: endOfPeriod)
         
         // Create the query to fetch weekly data
         let query = HKStatisticsCollectionQuery(
             quantityType: quantityType,
             quantitySamplePredicate: predicate,
             options: .cumulativeSum,
-            anchorDate: startOfWeekDate,
+            anchorDate: startOfPeriod,
             intervalComponents: DateComponents(day: 1)
         )
         
         // Handle the results of the query
         query.initialResultsHandler = { query, result, error in
-            guard let result = result else {
+            if let error = error {
+                print("HealthKit query error: \(error.localizedDescription)")
                 completion(nil, error)
                 return
             }
+            
+            guard let result = result else {
+                print("No results returned from HealthKit.")
+                completion(nil, nil)
+                return
+            }
+            // Retrieve the statistics and print each one
             let stats = result.statistics()
+            
+            print("Fetched \(stats.count) data points:")
+            for stat in stats {
+                let startDate = stat.startDate
+                let endDate = stat.endDate
+                
+                // Print the cumulative sum if available
+                if let quantity = stat.sumQuantity() {
+                    let value = quantity.doubleValue(for: HKUnit.meter()) // Convert to appropriate unit, e.g., steps
+                    print("From \(startDate) to \(endDate): \(value) steps")
+                } else {
+                    print("No data available for dates \(startDate) to \(endDate)")
+                }
+            }
             
             completion(stats, nil)
         }
@@ -88,16 +111,6 @@ class HealthKitManager {
                 return
             }
             let stats = result.statistics()
-            
-            /*print("Number of statistics retrieved: \(stats.count)")
-
-            for stat in stats {
-                let startDate = stat.startDate
-                let endDate = stat.endDate
-                let sumQuantity = stat.sumQuantity()
-                let steps = sumQuantity?.doubleValue(for: HKUnit.count()) ?? 0.0
-                print("Start date: \(startDate), End date: \(endDate), Steps: \(steps)")
-            }*/
             
             completion(stats, nil)
         }

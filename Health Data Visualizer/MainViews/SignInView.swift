@@ -11,7 +11,7 @@ struct SignInView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var errorMessage: String?
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -28,7 +28,7 @@ struct SignInView: View {
                     .padding(.horizontal)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
-                
+
                 SecureField("Password", text: $password)
                     .padding()
                     .frame(height: 50)
@@ -39,7 +39,7 @@ struct SignInView: View {
                             .stroke(Color.blue.opacity(0.6), lineWidth: 1) // Light blue border
                     )
                     .padding(.horizontal)
-                
+
                 Button(action: {
                     UserSessionManager.shared.signIn(email: email, password: password)
                 }) {
@@ -52,12 +52,12 @@ struct SignInView: View {
                         .cornerRadius(25) // Very rounded corners
                         .padding(.top, 50)
                 }
-                
+
                 HStack {
                     Text("Don't have an account yet?")
                         .font(.body)
                         .foregroundColor(.primary)
-                    
+
                     NavigationLink(destination: AuthView()) {
                         Text("Sign up here!")
                             .font(.body)
@@ -65,7 +65,7 @@ struct SignInView: View {
                     }
                 }
                 .padding()
-                
+
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)

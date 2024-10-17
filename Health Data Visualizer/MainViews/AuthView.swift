@@ -26,7 +26,7 @@ struct AuthView: View {
     @State private var password = ""
     @State private var errorMessage: String?
     @State private var userRole = ""
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -37,7 +37,7 @@ struct AuthView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-                
+
                 TextField("Email", text: $email)
                     .padding()
                     .frame(height: 50)
@@ -50,7 +50,7 @@ struct AuthView: View {
                     .padding(.horizontal)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
-                
+
                 SecureField("Password", text: $password)
                     .padding()
                     .frame(height: 50)
@@ -61,7 +61,7 @@ struct AuthView: View {
                             .stroke(Color.blue.opacity(0.6), lineWidth: 1) // Light blue border
                     )
                     .padding(.horizontal)
-                
+
                 Button(action: {
                     UserSessionManager.shared.signUp(email: email, password: password, role: userRole)
                 }) {
@@ -75,12 +75,12 @@ struct AuthView: View {
                         .padding(.horizontal)
                 }
                 .padding(.top, 50)
-                
+
                 HStack {
                     Text("Already signed up?")
                         .font(.body)
                         .foregroundColor(.primary)
-                    
+
                     NavigationLink(destination: SignInView()) {
                         Text("Sign in here!")
                             .font(.body)
@@ -88,7 +88,7 @@ struct AuthView: View {
                     }
                 }
                 .padding()
-                
+
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)

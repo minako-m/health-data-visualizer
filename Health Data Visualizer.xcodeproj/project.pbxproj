@@ -29,9 +29,10 @@
 		171835AF2C6E78BA00F059A5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835AE2C6E78BA00F059A5 /* AuthView.swift */; };
 		171835B32C6E7E9000F059A5 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171835B22C6E7E8F00F059A5 /* UserSessionManager.swift */; };
 		171835B72C6E868B00F059A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171835B62C6E868B00F059A5 /* GoogleService-Info.plist */; };
-		177CEFBA2C92F4AC004ADC0D /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CEFB92C92F4AC004ADC0D /* StudyView.swift */; };
-		177CEFBC2C92F6C2004ADC0D /* ParticipantStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CEFBB2C92F6C2004ADC0D /* ParticipantStudyView.swift */; };
-		177CEFBE2C9C6889004ADC0D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CEFBD2C9C6889004ADC0D /* SignInView.swift */; };
+		177CEFBA2C92F4AC004ADC0D /* ClinicianStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CEFB92C92F4AC004ADC0D /* ClinicianStudyView.swift */; };
+		177CEFBC2C92F6C2004ADC0D /* AllStudiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CEFBB2C92F6C2004ADC0D /* AllStudiesView.swift */; };
+		1797D9FC2CA743AD006CBB87 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797D9FB2CA743AD006CBB87 /* SignInView.swift */; };
+		1797D9FE2CB306F0006CBB87 /* ParticipantStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797D9FD2CB306F0006CBB87 /* ParticipantStudyView.swift */; };
 		17A327D72C91B1B400C8BC49 /* ClinicianContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A327D62C91B1B400C8BC49 /* ClinicianContentView.swift */; };
 		17A327DB2C91F79200C8BC49 /* AddStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A327DA2C91F79200C8BC49 /* AddStudyView.swift */; };
 /* End PBXBuildFile section */
@@ -72,11 +73,12 @@
 		171835AE2C6E78BA00F059A5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		171835B22C6E7E8F00F059A5 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		171835B62C6E868B00F059A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		177CEFB92C92F4AC004ADC0D /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
-		177CEFBB2C92F6C2004ADC0D /* ParticipantStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantStudyView.swift; sourceTree = "<group>"; };
-		177CEFBD2C9C6889004ADC0D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		177CEFB92C92F4AC004ADC0D /* ClinicianStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicianStudyView.swift; sourceTree = "<group>"; };
+		177CEFBB2C92F6C2004ADC0D /* AllStudiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStudiesView.swift; sourceTree = "<group>"; };
 		1781122A2C602BCB00339762 /* Health Data Visualizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health Data Visualizer.entitlements"; sourceTree = "<group>"; };
 		1781122B2C60406300339762 /* Health-Data-Visualizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Health-Data-Visualizer-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1797D9FB2CA743AD006CBB87 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		1797D9FD2CB306F0006CBB87 /* ParticipantStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantStudyView.swift; sourceTree = "<group>"; };
 		17A327D62C91B1B400C8BC49 /* ClinicianContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicianContentView.swift; sourceTree = "<group>"; };
 		17A327DA2C91F79200C8BC49 /* AddStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,7 +193,8 @@
 			children = (
 				1715E0C82C601E61002CBD22 /* FetchDataView.swift */,
 				1718358F2C62EDA300F059A5 /* ChartsView.swift */,
-				177CEFBB2C92F6C2004ADC0D /* ParticipantStudyView.swift */,
+				177CEFBB2C92F6C2004ADC0D /* AllStudiesView.swift */,
+				1797D9FD2CB306F0006CBB87 /* ParticipantStudyView.swift */,
 			);
 			path = ParticipantViews;
 			sourceTree = "<group>";
@@ -218,8 +221,8 @@
 			children = (
 				171835AE2C6E78BA00F059A5 /* AuthView.swift */,
 				17A327D62C91B1B400C8BC49 /* ClinicianContentView.swift */,
+				1797D9FB2CA743AD006CBB87 /* SignInView.swift */,
 				171835912C62F35000F059A5 /* ParticipantContentView.swift */,
-				177CEFBD2C9C6889004ADC0D /* SignInView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -228,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				17A327DA2C91F79200C8BC49 /* AddStudyView.swift */,
-				177CEFB92C92F4AC004ADC0D /* StudyView.swift */,
+				177CEFB92C92F4AC004ADC0D /* ClinicianStudyView.swift */,
 			);
 			path = ClinicianViews;
 			sourceTree = "<group>";
@@ -377,7 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177CEFBC2C92F6C2004ADC0D /* ParticipantStudyView.swift in Sources */,
+				177CEFBC2C92F6C2004ADC0D /* AllStudiesView.swift in Sources */,
 				171835AF2C6E78BA00F059A5 /* AuthView.swift in Sources */,
 				171835B32C6E7E9000F059A5 /* UserSessionManager.swift in Sources */,
 				1715E0C92C601E61002CBD22 /* FetchDataView.swift in Sources */,
@@ -385,11 +388,12 @@
 				1715E0C72C601E61002CBD22 /* Health_Data_VisualizerApp.swift in Sources */,
 				17A327D72C91B1B400C8BC49 /* ClinicianContentView.swift in Sources */,
 				1718359B2C6C47B300F059A5 /* HealthDataModel.swift in Sources */,
-				177CEFBA2C92F4AC004ADC0D /* StudyView.swift in Sources */,
+				177CEFBA2C92F4AC004ADC0D /* ClinicianStudyView.swift in Sources */,
 				1718358E2C6195B100F059A5 /* HealthKitManager.swift in Sources */,
+				1797D9FE2CB306F0006CBB87 /* ParticipantStudyView.swift in Sources */,
 				17A327DB2C91F79200C8BC49 /* AddStudyView.swift in Sources */,
 				171835902C62EDA400F059A5 /* ChartsView.swift in Sources */,
-				177CEFBE2C9C6889004ADC0D /* SignInView.swift in Sources */,
+				1797D9FC2CA743AD006CBB87 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

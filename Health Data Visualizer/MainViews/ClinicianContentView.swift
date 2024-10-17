@@ -13,7 +13,7 @@ import FirebaseFirestore
 struct ClinicianContentView: View {
     @State private var studies = [Study]()
     @State private var isShowingAddStudyView = false
-    
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -73,7 +73,7 @@ struct ClinicianContentView: View {
             }
         }
     }
-    
+
     private func fetchStudiesForClinician() {
         guard let clinicianId = UserSessionManager.shared.currentUser?.uid else {
             print("No current user found")
@@ -92,8 +92,11 @@ struct ClinicianContentView: View {
                     let description = data["description"] as? String ?? "No Description"
                     let contactPoint = data["contactPoint"] as? String ?? "No Contact Point"
                     let clinicianId = data["clinicianId"] as? String ?? ""
-                    
-                    return Study(id: id, name: name, description: description, contactPoint: contactPoint, clinicianId: clinicianId)
+                    let firebaseAPI = data["firebaseAPI"] as? String ?? "No Firebase API"
+                    let firebaseProjectID = data["firebaseProjectID"] as? String ?? "No Firebase Project ID"
+                    let startDate = data["startDate"] as? Date ?? Date()
+
+                    return Study(id: id, name: name, description: description, contactPoint: contactPoint, clinicianId: clinicianId, firebaseAPI: firebaseAPI, firebaseProjectID: firebaseProjectID, startDate: startDate)
                 }
             }
         }
